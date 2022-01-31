@@ -85,6 +85,12 @@ namespace DIS_Assignmnet1_SPRING_2022
         {
             try
             {
+                //Logic Explaination
+                // In this method i am taking the list of vowels into a character array and iterating through each of those 
+                // vowels to check if they are present at any of the indices in the actual string . If present, removing that
+                // letter from that particular index location and incremented it to see if more such index locations are present and 
+                // removing all of the vowels similarly. Handled the corner case of only vowels being there in the string by returning 
+                // an empty string in that case. It also handles corner case of case sensitive output for a given input.
                 // write your code here
                 char[] arr = { 'a', 'e', 'i', 'o', 'u' };
                 foreach (char c in arr)
@@ -141,6 +147,9 @@ namespace DIS_Assignmnet1_SPRING_2022
         {
             try
             {
+                //Logic Explaination
+                // In this method i am using join function to join all the parts of the array into a single string first,
+                // for each of the string arrays and then comparing them if they are equal to return true else return false.
                 // write your code here.
                 string s = string.Join("", bulls_string1);
                 string v = string.Join("", bulls_string2);
@@ -180,6 +189,12 @@ namespace DIS_Assignmnet1_SPRING_2022
         {
             try
             {
+                //Logic Explaination
+                // In this method i am first iterating the bull bucks array to add the elements one by one to new array while checking if
+                // the current element being added is already present in the array or not. If it is already present, i am removing
+                // the element present at that index by initiating it to 0 so that the sum is not effected by duplicate values. If it is 
+                // not present i am adding it to new array. Finally calculating the sum of all elements in the new array to get sum of unique
+                // values
                 // write your code here
                 int[] arr = new int[100];
                 for (int i = 0; i < bull_bucks.Length; i++)
@@ -238,6 +253,11 @@ namespace DIS_Assignmnet1_SPRING_2022
         {
             try
             {
+                //Logic Explaination
+                // In this method i am iterating the given 2 dimensional array over each element in each row and column and only adding up 
+                // the elements that are present at indices where i=j  or i+j = total length -1 which are nothing but the diagonal elements
+                // additionally i am using pass boolean array to identify and pass the elements that are already added to the sum(like the center element
+                // in an odd*odd array) in order not to add the common element of both the diagonals twice.
                 // write your code here.
                 int sum = 0;
                 bool[,] pass = new bool[bulls_grid.GetLength(0), bulls_grid.GetLength(1)];
@@ -287,8 +307,11 @@ namespace DIS_Assignmnet1_SPRING_2022
         {
             try
             {
+                //Logic Explaination
+                // In this method i am using a simple method of adding the elements at the given index locations from bull string array
+                // to a new array at the positions indicated by the indices in the indices array respectively. Returning this new char array
+                // as a string for output
                 // write your code here.
-                //
                 int l = bulls_string.Length;
                 char[] n = bulls_string.ToCharArray();
                 char[] arr = new char[l];
@@ -335,6 +358,10 @@ namespace DIS_Assignmnet1_SPRING_2022
         {
             try
             {
+                //Logic Explaination
+                // In this method i am first finding the first instance of the given character in the array and returning its index,
+                // using which i am splitting the bulls string6 into two parts. Reversing the first part of string and saving it in another
+                // string to which i am concatenating the remaining portion of the main string stored in part2 substring.
                 String prefix_string = "";
                 int idx = bulls_string6.IndexOf(ch);
                 if (idx > 0)
@@ -363,3 +390,25 @@ namespace DIS_Assignmnet1_SPRING_2022
         }
     }
 }
+
+//Self Reflection
+//Question 1
+// In this question i have learnt how to efficiently use methods like tolower, remove, indexof to reduce the time and space complexity 
+// and efficiently bring out a solution instead of traditional iteration approach. It took me 15 minutes for this question as the complexity 
+// level was not too high.
+//Question 2
+// This question did not take much time for me as soon as i figured out the logic of first combining the parts and then comparing. It took 7 min.
+//Question 3
+// This question needed time to explore the ways to find out unique elements. I tried to see if there are any inbuilt functions like distinct 
+// or unique but couldn't find one in c#. So i proceeded to use for loop to find indices of repeated elements and nullify their values
+// This took me about 30 minutes. 
+//Question 4
+// This one helped me to use 2d arrays and decipher the logic behind finding the common ground for elements in the diagonal which i added 
+// in the condition. It took me 20 minutes to solved it.
+//Question 5
+// This was pretty much a no brainer as i had both indices and actual array elements that were sufficient to create a new array of elements 
+// at new indices. However i struggled a bit to find a way to return the new char array as a string which is a new learning for me.
+// This made me take 20 minutes for the problem.
+//Question 6
+// I used a similar logic as q1 here to find index first and then reverse. This helped me learn how to conditionally reverse a string part 
+// which is different from the typical reverse string problem we usually encounter. It took me about 10 minutes.
